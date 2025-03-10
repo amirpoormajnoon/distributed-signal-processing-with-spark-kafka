@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: signal-deployment
+  labels:
+    app: signal
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: signal
+  template:
+    metadata:
+      labels:
+        app: signal
+    spec:
+      containers:
+      - name: signal-container
+        image: signal_generator:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 9092
+        env:
+        - name: KAFKA_BROKER
+          value: "kafka-broker:9092" 
+        - name: TOPIC_NAME
+          value: "stock-prices" 
