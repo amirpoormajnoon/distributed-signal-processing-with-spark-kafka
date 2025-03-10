@@ -40,7 +40,7 @@ The **Sender** consumes the processed signals from Kafka and sends them to a spe
 
 ### 4. **Receiver**
 
-The **Receiver** listens to the **Sender Service** where the financial data is published and monitoring the analysised data .
+The **Receiver** listens to the **Sender Service** and monitoring the analysised data .
 
 **Files:**
 - `receiver.py`: Contains the logic for consuming data from Kafka topics.
