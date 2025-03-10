@@ -40,7 +40,7 @@ The **Sender** consumes the processed signals from Kafka and sends them to a spe
 
 ### 4. **Receiver**
 
-The **Receiver** listens to the **Sender Service** and monitoring the analysised data .
+The **Receiver** listens to the **Sender Service** and showing the analysised data .
 
 **Files:**
 - `receiver.py`: Contains the logic for consuming data from Kafka topics.
@@ -55,4 +55,4 @@ The `.gitignore` file is used to specify which files and directories Git should 
 
 ## Getting Started
 
-To get started, you can clone this repository and build the necessary Docker containers.
+To get started, clone this repository and install **PySpark**, **Kafka**, and **Docker** on your system. After that, build the container for each service and run them to start the real-time signal processing pipeline.
