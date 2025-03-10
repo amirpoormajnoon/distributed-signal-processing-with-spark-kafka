@@ -17,14 +17,13 @@ The **Producer** is responsible for collecting financial data from a source (in 
 
 The **Signal Generator** component reads the data from a Kafka topic, where the **Producer** has already pushed the real-time financial data from the exchange. The **Signal Generator** processes this incoming data and performs various technical analyses to generate trading signals.
 
-- **Data Flow**: The **Producer** component streams real-time market data (such as trading prices) to a Kafka topic. The **Signal Generator** consumes this data from the Kafka topic for further analysis.
+
 - **Real-time Data Processing**: Using **Apache Spark**, the component processes this data in real-time. Key financial indicators like **Moving Averages (MA)**, **Exponential Moving Averages (EMA)**, and **Relative Strength Index (RSI)** are calculated to evaluate market conditions.
   
   - **Moving Averages (MA)**: Short-term and long-term moving averages are computed to detect price trends.
   - **Exponential Moving Average (EMA)**: A weighted moving average that reacts more quickly to recent price changes.
   - **Relative Strength Index (RSI)**: A momentum indicator used to assess if a market is overbought or oversold.
 
-- **Signal Generation**: Based on the calculated indicators, the **Signal Generator** produces trading signals like "Buy" or "Sell." These signals are then sent to a Kafka topic, where other components (like the **Sender**) can act on them, such as triggering notifications or placing orders.
 
 **Files:**
 - `signal_generator.py`: Contains the logic for reading data from Kafka, performing the analysis (MA, EMA, RSI), and generating trading signals.
