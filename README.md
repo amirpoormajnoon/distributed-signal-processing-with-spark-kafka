@@ -29,10 +29,6 @@ The **Signal Generator** component reads the data from a Kafka topic, where the 
 - `signal_generator.py`: Contains the logic for reading data from Kafka, performing the analysis (MA, EMA, RSI), and generating trading signals.
 - `Dockerfile`: Used to containerize the Signal Generator, ensuring consistent deployment across different environments.
 
-### Key Features:
-- Real-time financial data processing with Apache Spark's **Structured Streaming**.
-- Calculation of essential financial indicators: **MA**, **EMA**, and **RSI**.
-- Sending actionable **trading signals** to a Kafka topic for further processing and action.
 
 ### 3. **Sender**
 
@@ -44,7 +40,7 @@ The **Sender** consumes the processed signals from Kafka and sends them to a spe
 
 ### 4. **Receiver**
 
-The **Receiver** listens to the Kafka topics where the financial data is published and processes the data further for analysis.
+The **Receiver** listens to the **Sender Service** where the financial data is published and monitoring the analysised data .
 
 **Files:**
 - `receiver.py`: Contains the logic for consuming data from Kafka topics.
